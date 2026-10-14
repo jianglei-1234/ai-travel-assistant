@@ -1,7 +1,10 @@
 import axios from 'axios'
 
+// 本地开发走 vite 代理（/api）；线上部署时通过环境变量 VITE_API_BASE_URL 指向后端地址
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+
 const request = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   timeout: 60000,
   headers: {
     'Content-Type': 'application/json'
@@ -43,7 +46,7 @@ export async function fetchStream(url, data, onChunk, onComplete, onError) {
   const controller = new AbortController()
 
   try {
-    const response = await fetch(`/api${url}`, {
+    const response = await fetch(`${API_BASE_URL}${url}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

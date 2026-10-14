@@ -1,0 +1,22 @@
+# Render 部署配置（后端 Express 服务）
+# 文档：https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: ai-travel-server
+    runtime: node
+    rootDir: server/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MODEL_PROVIDER
+        value: siliconflow
+      # 以下敏感/个性化配置在 Render 后台手动填写（sync: false = 不写入本文件）
+      - key: SILICONFLOW_API_KEY
+        sync: false
+      - key: SILICONFLOW_MODEL
+        sync: false
+      - key: SILICONFLOW_BASE_URL
+        sync: false

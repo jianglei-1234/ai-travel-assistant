@@ -1,0 +1,15 @@
+# Netlify 部署配置（前端 travel-h5）
+
+[build]
+  base = "travel-h5"
+  command = "npm run build"
+  publish = "dist"
+
+# Vue Router history 模式：刷新/直达子页面不 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 环境变量说明（在 Netlify 后台 Site settings → Environment variables 配置）：
+# VITE_API_BASE_URL = 后端部署地址，例如 https://ai-travel-server.onrender.com/api
