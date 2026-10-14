@@ -21,15 +21,14 @@
 
 ```
 project_1/
-├── server/
-│   └── server/               # 后端（Express + LangChain）
-│       ├── src/
-│       │   ├── index.js      # 入口
-│       │   ├── routes/       # 路由（recommend / chat）
-│       │   ├── services/     # LangChain 大模型服务
-│       │   └── utils/        # SSE 流式工具
-│       ├── .env.example      # 环境变量模板（复制为 .env 后填写）
-│       └── package.json
+├── server/                   # 后端（Express + LangChain）
+│   ├── src/
+│   │   ├── index.js          # 入口
+│   │   ├── routes/           # 路由（recommend / chat）
+│   │   ├── services/         # LangChain 大模型服务
+│   │   └── utils/            # SSE 流式工具
+│   ├── .env.example          # 环境变量模板（复制为 .env 后填写）
+│   └── package.json
 └── travel-h5/                # 前端（Vue 3）
     ├── src/
     │   ├── views/            # 页面（首页/详情/对话/我的）
@@ -45,7 +44,7 @@ project_1/
 ### 1. 启动后端
 
 ```bash
-cd server/server
+cd server
 npm install
 cp .env.example .env    # 然后编辑 .env，填入你的 API Key
 npm run dev
