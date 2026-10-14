@@ -1,0 +1,22 @@
+# 依赖
+node_modules/
+
+# 环境变量（含 API Key，禁止上传到 Git！）
+.env
+.env.local
+.env.*.local
+
+# 构建产物
+dist/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 编辑器
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
